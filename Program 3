@@ -1,0 +1,232 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Main {
+    public static void main(String[] args) {
+        Queue<String> lineOne = new LinkedList<>();
+        Queue<String> lineTwo = new LinkedList<>();
+        char let = 'A';
+        int time = 0;
+        int rn;
+        int rq;
+        String person = "" + let + let + let;
+        lineOne.add(person);
+
+        while (time < 40)
+        {
+            rq = (int)(Math.random() * 2);
+            rn = (int)(Math.random() * 6);
+
+            if ((rn == 0) || (rn == 1) || (rn == 2))
+            {
+                let++; person = "" + let + let + let;
+                if (lineOne.isEmpty())
+                {
+                    lineOne.add(person);
+                }
+                else if (lineTwo.isEmpty())
+                {
+                    lineTwo.add(person);
+                }
+                else if (lineOne.size() > 5)
+                {
+                    lineTwo.add(person);
+                }
+                else if (lineTwo.size() > 5)
+                {
+                    lineOne.add(person);
+                }
+                else if (rq == 1)
+                {
+                    lineTwo.add(person);
+                }
+                else
+                {
+                    lineOne.add(person);
+                }
+            }
+            if ((rn == 3) || (rn == 4) || (rn == 5))
+            {
+                if (rq == 1)
+                {
+                    lineTwo.poll();
+                }
+                else
+                {
+                    lineOne.poll();
+                }
+            }
+            System.out.println("Time " + time + " for line 1: "  + lineOne);
+            System.out.println("Time " + time + " for line 2: "  + lineTwo);
+            time ++;
+        }
+
+    }
+}
+
+Output 1
+
+Time 0 for line 1: [AAA]
+Time 0 for line 2: []
+Time 1 for line 1: [AAA]
+Time 1 for line 2: [BBB]
+Time 2 for line 1: [AAA, CCC]
+Time 2 for line 2: [BBB]
+Time 3 for line 1: [AAA, CCC, DDD]
+Time 3 for line 2: [BBB]
+Time 4 for line 1: [AAA, CCC, DDD, EEE]
+Time 4 for line 2: [BBB]
+Time 5 for line 1: [AAA, CCC, DDD, EEE]
+Time 5 for line 2: []
+Time 6 for line 1: [AAA, CCC, DDD, EEE]
+Time 6 for line 2: [FFF]
+Time 7 for line 1: [CCC, DDD, EEE]
+Time 7 for line 2: [FFF]
+Time 8 for line 1: [CCC, DDD, EEE]
+Time 8 for line 2: [FFF, GGG]
+Time 9 for line 1: [CCC, DDD, EEE, HHH]
+Time 9 for line 2: [FFF, GGG]
+Time 10 for line 1: [CCC, DDD, EEE, HHH]
+Time 10 for line 2: [GGG]
+Time 11 for line 1: [DDD, EEE, HHH]
+Time 11 for line 2: [GGG]
+Time 12 for line 1: [DDD, EEE, HHH]
+Time 12 for line 2: []
+Time 13 for line 1: [EEE, HHH]
+Time 13 for line 2: []
+Time 14 for line 1: [HHH]
+Time 14 for line 2: []
+Time 15 for line 1: [HHH]
+Time 15 for line 2: [III]
+Time 16 for line 1: []
+Time 16 for line 2: [III]
+Time 17 for line 1: [JJJ]
+Time 17 for line 2: [III]
+Time 18 for line 1: [JJJ]
+Time 18 for line 2: [III, KKK]
+Time 19 for line 1: [JJJ, LLL]
+Time 19 for line 2: [III, KKK]
+Time 20 for line 1: [JJJ, LLL]
+Time 20 for line 2: [III, KKK, MMM]
+Time 21 for line 1: [JJJ, LLL]
+Time 21 for line 2: [KKK, MMM]
+Time 22 for line 1: [JJJ, LLL]
+Time 22 for line 2: [KKK, MMM, NNN]
+Time 23 for line 1: [JJJ, LLL]
+Time 23 for line 2: [KKK, MMM, NNN, OOO]
+Time 24 for line 1: [JJJ, LLL, PPP]
+Time 24 for line 2: [KKK, MMM, NNN, OOO]
+Time 25 for line 1: [JJJ, LLL, PPP]
+Time 25 for line 2: [KKK, MMM, NNN, OOO, QQQ]
+Time 26 for line 1: [JJJ, LLL, PPP]
+Time 26 for line 2: [MMM, NNN, OOO, QQQ]
+Time 27 for line 1: [JJJ, LLL, PPP]
+Time 27 for line 2: [MMM, NNN, OOO, QQQ, RRR]
+Time 28 for line 1: [LLL, PPP]
+Time 28 for line 2: [MMM, NNN, OOO, QQQ, RRR]
+Time 29 for line 1: [LLL, PPP]
+Time 29 for line 2: [NNN, OOO, QQQ, RRR]
+Time 30 for line 1: [PPP]
+Time 30 for line 2: [NNN, OOO, QQQ, RRR]
+Time 31 for line 1: [PPP]
+Time 31 for line 2: [OOO, QQQ, RRR]
+Time 32 for line 1: []
+Time 32 for line 2: [OOO, QQQ, RRR]
+Time 33 for line 1: []
+Time 33 for line 2: [QQQ, RRR]
+Time 34 for line 1: [SSS]
+Time 34 for line 2: [QQQ, RRR]
+Time 35 for line 1: [SSS]
+Time 35 for line 2: [RRR]
+Time 36 for line 1: []
+Time 36 for line 2: [RRR]
+Time 37 for line 1: []
+Time 37 for line 2: []
+Time 38 for line 1: []
+Time 38 for line 2: []
+Time 39 for line 1: []
+Time 39 for line 2: []
+
+
+Output 2
+
+Time 0 for line 1: [AAA]
+Time 0 for line 2: []
+Time 1 for line 1: []
+Time 1 for line 2: []
+Time 2 for line 1: []
+Time 2 for line 2: []
+Time 3 for line 1: []
+Time 3 for line 2: []
+Time 4 for line 1: []
+Time 4 for line 2: []
+Time 5 for line 1: [BBB]
+Time 5 for line 2: []
+Time 6 for line 1: [BBB]
+Time 6 for line 2: []
+Time 7 for line 1: [BBB]
+Time 7 for line 2: [CCC]
+Time 8 for line 1: [BBB, DDD]
+Time 8 for line 2: [CCC]
+Time 9 for line 1: [BBB, DDD, EEE]
+Time 9 for line 2: [CCC]
+Time 10 for line 1: [DDD, EEE]
+Time 10 for line 2: [CCC]
+Time 11 for line 1: [DDD, EEE]
+Time 11 for line 2: [CCC, FFF]
+Time 12 for line 1: [DDD, EEE, GGG]
+Time 12 for line 2: [CCC, FFF]
+Time 13 for line 1: [EEE, GGG]
+Time 13 for line 2: [CCC, FFF]
+Time 14 for line 1: [GGG]
+Time 14 for line 2: [CCC, FFF]
+Time 15 for line 1: [GGG]
+Time 15 for line 2: [CCC, FFF, HHH]
+Time 16 for line 1: [GGG, III]
+Time 16 for line 2: [CCC, FFF, HHH]
+Time 17 for line 1: [GGG, III, JJJ]
+Time 17 for line 2: [CCC, FFF, HHH]
+Time 18 for line 1: [GGG, III, JJJ]
+Time 18 for line 2: [FFF, HHH]
+Time 19 for line 1: [III, JJJ]
+Time 19 for line 2: [FFF, HHH]
+Time 20 for line 1: [III, JJJ, KKK]
+Time 20 for line 2: [FFF, HHH]
+Time 21 for line 1: [III, JJJ, KKK]
+Time 21 for line 2: [FFF, HHH, LLL]
+Time 22 for line 1: [III, JJJ, KKK]
+Time 22 for line 2: [HHH, LLL]
+Time 23 for line 1: [III, JJJ, KKK]
+Time 23 for line 2: [HHH, LLL, MMM]
+Time 24 for line 1: [III, JJJ, KKK, NNN]
+Time 24 for line 2: [HHH, LLL, MMM]
+Time 25 for line 1: [III, JJJ, KKK, NNN]
+Time 25 for line 2: [LLL, MMM]
+Time 26 for line 1: [III, JJJ, KKK, NNN]
+Time 26 for line 2: [MMM]
+Time 27 for line 1: [III, JJJ, KKK, NNN]
+Time 27 for line 2: [MMM, OOO]
+Time 28 for line 1: [III, JJJ, KKK, NNN]
+Time 28 for line 2: [OOO]
+Time 29 for line 1: [III, JJJ, KKK, NNN, PPP]
+Time 29 for line 2: [OOO]
+Time 30 for line 1: [JJJ, KKK, NNN, PPP]
+Time 30 for line 2: [OOO]
+Time 31 for line 1: [JJJ, KKK, NNN, PPP]
+Time 31 for line 2: []
+Time 32 for line 1: [JJJ, KKK, NNN, PPP]
+Time 32 for line 2: [QQQ]
+Time 33 for line 1: [JJJ, KKK, NNN, PPP]
+Time 33 for line 2: [QQQ, RRR]
+Time 34 for line 1: [KKK, NNN, PPP]
+Time 34 for line 2: [QQQ, RRR]
+Time 35 for line 1: [KKK, NNN, PPP]
+Time 35 for line 2: [RRR]
+Time 36 for line 1: [KKK, NNN, PPP]
+Time 36 for line 2: [RRR, SSS]
+Time 37 for line 1: [KKK, NNN, PPP]
+Time 37 for line 2: [RRR, SSS, TTT]
+Time 38 for line 1: [NNN, PPP]
+Time 38 for line 2: [RRR, SSS, TTT]
+Time 39 for line 1: [NNN, PPP]
+Time 39 for line 2: [RRR, SSS, TTT, UUU]

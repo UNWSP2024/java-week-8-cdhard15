@@ -1,0 +1,87 @@
+import java.util.*;
+
+public class Main
+{
+    static Scanner userInput = new Scanner(System.in);
+    public static void main(String[] args)
+    {
+        boolean makeChanges = true;
+        List<Object> collection = new ArrayList<>();
+        while (makeChanges)
+        {
+             System.out.println("type 'a' to add, 'r' to remove, 'e' to edit anything in this list. If no, type 'n'");
+             String choice = userInput.nextLine();
+             if (choice.equals("n"))
+             {
+                 makeChanges = false;
+             }
+             else if (choice.equals("a"))
+             {
+                 boolean add = true;
+                 while (add)
+                 {
+                     System.out.println("Type something to add or type 'd' when done adding: ");
+                     String input = userInput.nextLine();
+                     if (input.equals("d"))
+                     {
+                         add = false;
+                     }
+                     else
+                     {
+                         collection.add(input);
+                     }
+                 }
+             }
+             else if (choice.equals("r"))
+            {
+                System.out.println("Enter number of item you want to remove: ");
+                System.out.println( "or to show a numbered list type '0'");
+                int remove = userInput.nextInt();
+                if (remove == 0) {
+                    for (int i = 0; i < collection.size(); i++) {
+                        System.out.println("Item " + (i + 1) + ": " + collection.get(i));
+                    }
+                    System.out.println("Enter number to remove: ");
+                    int remove2 = userInput.nextInt();
+                    collection.remove(remove2 - 1);
+                }
+                else
+                {
+                    collection.remove(remove - 1);
+                }
+            }
+        }
+
+    }
+}
+
+Output
+
+type 'a' to add, 'r' to remove, 'e' to edit anything in this list. If no, type 'n'
+a
+Type something to add or type 'd' when done adding: 
+Caleb
+Type something to add or type 'd' when done adding: 
+Daniel
+Type something to add or type 'd' when done adding: 
+Harding
+Type something to add or type 'd' when done adding: 
+CDH
+Type something to add or type 'd' when done adding: 
+29
+Type something to add or type 'd' when done adding: 
+08/15/1995
+Type something to add or type 'd' when done adding: 
+d
+type 'a' to add, 'r' to remove, 'e' to edit anything in this list. If no, type 'n'
+r
+Enter number of item you want to remove: 
+or to show a numbered list type '0'
+0
+Item 1:Caleb
+Item 2:Daniel
+Item 3:Harding
+Item 4:CDH
+Item 5:29
+Item 6:08/15/1995
+Enter number to remove:
