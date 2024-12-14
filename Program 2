@@ -1,0 +1,53 @@
+import java.util.*;
+
+public class Main
+{
+    static Scanner userInput = new Scanner(System.in);
+    public static void main(String[] args)
+    {
+        Map<String, String> UsernamePassword = new HashMap<>();
+        Map<String, String> UserMessage =  new HashMap<>();
+
+        UsernamePassword.put("cdh", "6128456466");
+        UsernamePassword.put("hjh", "7635683791");
+        UsernamePassword.put("ajh", "6122449686");
+        UsernamePassword.put("enh", "6129400302");
+        UsernamePassword.put("jrh", "6129406283");
+
+        UserMessage.put("cdh", "Hey that's me!");
+        UserMessage.put("hjh", "I love you!");
+        UserMessage.put("ajh", "What's up bro?");
+        UserMessage.put("enh", "Hey dude");
+        UserMessage.put("jrh", "Happy Birthday!");
+
+        System.out.println("Enter your username: ");
+        String username = userInput.nextLine();
+        System.out.println("Enter your password: ");
+        String password = userInput.nextLine();
+
+        if (password.equals(UsernamePassword.get(username)))
+        {
+            System.out.println(UserMessage.get(username));
+        }
+        else
+        {
+            System.out.println("That is not correct. Program has ended");
+        }
+
+    }
+}
+
+Output 1
+Enter your username: 
+cdh
+Enter your password: 
+6128456466
+Hey that's me!
+
+Output 2
+
+Enter your username: 
+enh
+Enter your password: 
+cdjskv
+That is not correct. Program has ended
